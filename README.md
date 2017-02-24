@@ -1,4 +1,4 @@
-# webpack-react 示例项目 · 简易留言板
+# webpack-react 示例项目
 
 1.下载项目
 2.npm install
