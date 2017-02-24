@@ -1,0 +1,52 @@
+
+.header .main-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.header .main-header figure {
+  display: inline-block;
+  padding: 20px 0;
+}
+.header .main-header figure a {
+  line-height: 50px;
+}
+.header .main-header ul {
+  display: inline-block;
+  float: right;
+  padding: 20px 0;
+}
+.header .main-header ul li {
+  display: inline-block;
+}
+.header .main-header ul li a {
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 50px;
+  text-transform: uppercase;
+  border: 2px solid transparent;
+  padding: 14px 30px;
+  border-radius: 4px;
+  -webkit-transition: all 0.3s ease ease-out;
+  -moz-transition: all 0.3s ease ease-out;
+  -o-transition: all 0.3s ease ease-out;
+  transition: all 0.3s ease ease-out;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+.header .main-header ul li a:hover {
+  background-color: #fff;
+  color: #2aabe5;
+}
+.header .main-header ul li:last-child a {
+  border: 2px solid #fff;
+  border-radius: 4px;
+}
+.header .main-header ul li:last-child a:hover {
+  background-color: #fff;
+  color: #2aabe5;
+}
+.header > .header-background {
+  /*background: url("../images/backgrounds/bg-top.jpg") top center no-repeat;*/
+  background-size: cover;
+}

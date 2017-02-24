@@ -1,0 +1,163 @@
+.copyright {
+	line-height: 40px;
+	position: relative;
+	overflow: hidden;
+	padding: 10px 0;
+	margin-top: 30px;
+}
+
+.site-footer .widget {
+	margin-bottom: 50px;
+}
+
+.site-footer .widget li {
+	margin-top: 5px;
+}
+
+.site-footer .widget li:first-of-type  {
+	margin-top: 0;
+}
+
+.site-footer.text-white .widget a,
+.site-footer.text-white .widget i {
+	color: #fff;
+}
+
+.site-footer.text-white .widget-title {
+	color: #fff;
+	border-bottom: 1px solid #cfcfcf;
+}
+
+.site-footer.text-white .widget-title::before,
+.site-footer.text-white .widget-title::after {
+	background: #fff;
+}
+
+.horizontal-nav ul {
+	margin-bottom: 0;
+}
+
+.horizontal-nav li {
+	display: inline-block;
+	margin-right: 37px;
+}
+
+.horizontal-nav li:last-of-type {
+	margin-right: 0;
+}
+
+.horizontal-nav li a {
+	color: #fff;
+}
+
+.horizontal-nav.text-dark li a {
+	color: #333;
+}
+
+
+/* Social Icons */
+.socials-icons {
+	margin: 0;
+	height: 40px;
+}
+
+.socials-icons ul  {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	display: block;
+}
+
+.socials-icons.pull-center ul  {
+	margin: 0 auto;
+	text-align: center;
+	display: table;
+}
+	
+.socials-icons li {
+	margin: 0;
+	display: block;
+	float: left;
+}
+
+/* Icons */
+.social-share-title {
+	font-weight: 600;
+	line-height: 40px;
+	display: block;
+}
+
+.social-icon {
+	display: block;
+	background: #f5f7f9;
+	float: left;
+	margin: 0 5px 5px 0;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	line-height: 38px!important;
+	color: #777;
+	border: 1px solid #e5e7e9;
+	overflow: hidden;
+	text-align: center;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+
+.social-icon:last-child {
+	margin-right: 0;
+}
+
+.social-icon i {
+	color: #777;
+	transition: all 0.3s ease;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+	background: #fff;
+}
+
+.social-icon:hover,
+.social-icon:hover i {
+	color: #333;
+}
+
+.social-icon.social-rounded {
+	background: #f5f7f9;
+	border: 1px solid #d8d9da;
+	border-radius: 20px;
+	color: #777;
+}
+
+.social-icon.social-rounded i {
+	color: #777;
+}
+
+.social-icon.social-rounded:hover {
+	background: #fefefe;
+	border: 1px solid #e5e7e9;
+}
+
+.social-icon.social-rounded:hover,
+.social-icon.social-rounded:hover i {
+	color: #333;
+}
+
+.social-icon.social-clear {
+	background: transparent;
+	border: 0;
+	color: #777;
+	margin: 0;
+}
+
+.social-icon.social-clear:hover,
+.social-icon.social-clear:hover i {
+	color: #2196f3;
+}
+
+.social-white i {
+	color: #fff;
+}
