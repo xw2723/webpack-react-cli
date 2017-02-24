@@ -11,7 +11,7 @@ var $ = require("jquery");
 /**
  * 导入模块
  */
-import ModuleHtml from './components/module';
+// import ModuleHtml from './components/module';
 import Header from './components/header';
 import Footer from './components/footer';
 

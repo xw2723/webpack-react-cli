@@ -4,16 +4,6 @@ var webpack = require('webpack');
 // var node_modules = path.resolve(__dirname, 'node_modules');
 // var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 
-// var fs= require("fs");
-// fs.exists(jqueryPath, function(exists) {  
-//     if(exists){
-//         console.log("文件存在")
-//     }
-//     if(!exists){
-//         console.log("文件不存在")
-//     }
-// }); 
-
 module.exports = {
     entry: {
         app: "./res/app.js",
@@ -61,4 +51,3 @@ module.exports = {
         new webpack.BannerPlugin('This file is created by zhaoda')
     ]
 };
-

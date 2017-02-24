@@ -10,7 +10,8 @@ var Header = React.createClass({
                     <div className="container">
                         <div className="navbar-header">
                             <a className="navbar-brand" href="#">
-                                <img alt="Brand" src="#"/>
+                                {/*<img alt="Brand" src="#"/>*/}
+                                xxxxx
                             </a>
                         </div>
 
