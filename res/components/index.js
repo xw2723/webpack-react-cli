@@ -2,6 +2,38 @@ import React from "react";
 
 require("./index.css");
 
+const pageData = {
+    list: [
+        {img: "./static/img/img_9.jpg"},
+        {img: "./static/img/img_10.jpg"},
+        {img: "./static/img/img_11.jpg"},
+        {img: "./static/img/img_12.jpg"},
+        {img: "./static/img/img_13.jpg"},
+        {img: "./static/img/img_14.jpg"},
+        {img: "./static/img/img_15.jpg"},
+        {img: "./static/img/img_9.jpg"},
+        {img: "./static/img/img_10.jpg"},
+        {img: "./static/img/img_11.jpg"},
+        {img: "./static/img/img_12.jpg"},
+        {img: "./static/img/img_13.jpg"},
+        {img: "./static/img/img_14.jpg"},
+        {img: "./static/img/img_15.jpg"}
+    ]
+};
+
+var TopImageBox = React.createClass({
+    render: function(){
+        return (
+            <div>
+                
+            </div>
+        );
+    }
+});
+
+/**
+ * 图片流的每一项
+ */
 var ItemDom = React.createClass({
     render: function(){
         return (
@@ -10,7 +42,16 @@ var ItemDom = React.createClass({
                     <img src={this.props.item.img} />
                 </div>
                 <div className="txt-wrap">
-
+                    <div className="txt-wrap-table">
+                        <div>
+                            <p className="txt">我的开始，我的结束！！！！</p>
+                            <div className="likebox">
+                                <i className="glyphicon glyphicon-heart-empty"></i>
+                                <i className="glyphicon glyphicon-heart"></i>
+                                {/*<span>88</span>*/}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </li>
         );
@@ -22,40 +63,74 @@ var ItemDom = React.createClass({
  */
 var IndexPage = React.createClass({
     getDefaultProps: function(){
-        return {
-            list: [
-                {img: "./static/img/img_9.jpg"},
-                {img: "./static/img/img_10.jpg"},
-                {img: "./static/img/img_11.jpg"},
-                {img: "./static/img/img_12.jpg"},
-                {img: "./static/img/img_13.jpg"},
-                {img: "./static/img/img_14.jpg"},
-                {img: "./static/img/img_15.jpg"},
-                {img: "./static/img/img_9.jpg"},
-                {img: "./static/img/img_10.jpg"},
-                {img: "./static/img/img_11.jpg"},
-                {img: "./static/img/img_12.jpg"},
-                {img: "./static/img/img_13.jpg"},
-                {img: "./static/img/img_14.jpg"},
-                {img: "./static/img/img_15.jpg"}
-            ]
-        };
+        return {};
     },
     render: function(){
+        //显示几列，可配置
+        var colNum = 4;
+        var list = [];
+        var times = 0;
+
+        for(var i=0;i<colNum;i++){
+            list.push([]);
+        }
+
+        for(var i=0;i<pageData.list.length;i++){
+            var n = pageData.list[i];
+            for(var j=0;j<list.length;j++){
+                if(j==times){
+                    list[j].push(n);
+                    if(times>=3){ times = -1; }
+                    break;
+                }
+            }
+            times++;
+        }
+
         return (
             <div className="container-pull index-page">
-                <ul className="image-flow-list">
+                <TopImageBox />
+                <div className="image-flow-list">
                     {
-                        this.props.list.map(function(n, i){
+                        list.map(function(itemList, index){
                             return (
-                                <ItemDom item={n} key={i} />
+                                <ul className="image-flow-colm">
+                                    {
+                                        itemList.map(function(n, idx){
+                                            return (
+                                                <ItemDom item={n} />
+                                            );
+                                        })
+                                    }
+                                </ul>
                             );
                         })
                     }
-                </ul>
+                </div>
             </div>
         );
     }
 });
 
 export default IndexPage;
+
+
+//图片流的另一种算法
+//计算每个数组最大个数
+// var maxLength = Math.ceil(this.props.list.length / colNum);
+// var result = [];
+// for(var i=0; i<this.props.list.length; i+=maxLength){
+//     result.push(this.props.list.slice(i, i+maxLength));
+// }
+
+// {
+//     this.props.list.map(function(n, i){
+//         var position = {};
+//         if(i%4==0){
+//             position[0] = 
+//         }
+//         return (
+//             <ItemDom item={n} key={i}  />
+//         );
+//     })
+// }
