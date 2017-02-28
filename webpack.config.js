@@ -4,6 +4,8 @@ var webpack = require('webpack');
 // var node_modules = path.resolve(__dirname, 'node_modules');
 // var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
 
+// var ExtractTextPlugin = require("extract-text-webpack-plugin");  //css单独打包
+
 module.exports = {
     entry: {
         app: "./res/app.js",
@@ -13,28 +15,28 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js'
     },
-    devServer: {
-        inline: true,
-        port: 8080
-    },
     resolve:{
-        alias: {
-            //文件取别名
-            JQuery: "./static/js/jquery-vendor.js"
+        //文件取别名
+        // alias: {
+            // JQuery: "./static/js/jquery-vendor.js"
             // 'react': pathToReact
-        },
-        // extensions:['','.js','.json']
+        // },
+        //配置此项，可以不写后缀
+        extensions: ['.js', '.jsx', '.json']
     },
     module: {
         loaders: [
-            //expose-loader插件， 导入jquery用
+            // expose-loader插件， 导入jquery用
+            // 将jquery绑定为window.jQuery ! window.$
             {
-                // 得到jquery模块的绝对路径
                 test: require.resolve('jquery'),
-                // 将jquery绑定为window.jQuery ! window.$
                 loader: 'expose-loader?jQuery!expose-loader?$'
             },
-            {test: /\.css$/, loader: 'style-loader!css-loader'},
+            //autoprefixer-loader为css自动添加浏览器前缀
+            { test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader'},
+            { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], },
+            { test: /\.json$/, loader: 'json', },
+            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
             {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
@@ -46,8 +48,20 @@ module.exports = {
             },
         ]
     },
+    // 3.使用webpack构建本地服务器
+    // npm install --save-dev webpack-dev-server
+    devServer: {
+        // contentBase: './public', //本地服务器所加载的页面所在的目录
+        // historyApiFallback: true, //不跳转
+        colors: true, //终端中输出结果为彩色
+        inline: true, //实时刷新
+        port: 8080
+    },
+    //方便开发环境调试和错误追踪
     devtool: 'eval-source-map',
     plugins: [
+        //css单独打包
+        // new ExtractTextPlugin('main.css'),
         new webpack.BannerPlugin('This file is created by zhaoda')
     ]
 };

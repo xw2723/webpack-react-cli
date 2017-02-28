@@ -17,9 +17,9 @@
     position: relative;
 
     /*动画显示*/
-    animation-duration: .7s;
+    /*animation-duration: .7s;
     animation-fill-mode: both;
-    animation-name: fadeIn;
+    animation-name: fadeIn;*/
 }
 .image-flow-colm > li > .img-wrap {
     max-height: 476px;
@@ -32,20 +32,10 @@
     height: auto;
     display: block;
     vertical-align: middle;
-
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -o-transform: scale(1);
     transform: scale(1);                                   
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
     transition: all 0.5s;
 }
 .image-flow-colm > li:hover > .img-wrap > img {
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -o-transform: scale(1.1);
     transform: scale(1.1);
 }
 .image-flow-colm > li > .txt-wrap {
@@ -59,9 +49,6 @@
     vertical-align: middle;
     background: transparent;
     opacity: 0;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
     transition: all 0.5s;
 }
 .image-flow-colm > li:hover > .txt-wrap {

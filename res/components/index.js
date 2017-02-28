@@ -1,8 +1,23 @@
 import React from "react";
+import Slider from "./common/Slider/Slider.jsx";
 
 require("./index.css");
 
 const pageData = {
+    topImgs: [
+        {
+            src: "./static/img/demo1.jpg",
+            alt: 'images-1',
+        },
+        {
+            src: "./static/img/demo2.jpg",
+            alt: 'images-2',
+        },
+        {
+            src: "./static/img/demo3.jpg",
+            alt: 'images-3',
+        }
+    ],
     list: [
         {img: "./static/img/img_9.jpg"},
         {img: "./static/img/img_10.jpg"},
@@ -89,7 +104,17 @@ var IndexPage = React.createClass({
 
         return (
             <div className="container-pull index-page">
-                <TopImageBox />
+                <div style={{width:"100%",height:"350px",overflow:"hidden"}}>
+                    <Slider
+                        items={pageData.topImgs}
+                        speed={1.2}
+                        delay={2.1}
+                        pause={true}
+                        autoplay={true}
+                        dots={true}
+                        arrows={true}
+                    />
+                </div>
                 <div className="image-flow-list">
                     {
                         list.map(function(itemList, index){

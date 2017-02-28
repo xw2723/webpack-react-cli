@@ -101,8 +101,6 @@
 	overflow: hidden;
 	text-align: center;
 	transition: all 0.3s ease;
-	-webkit-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
 }
 
 .social-icon:last-child {
@@ -112,8 +110,6 @@
 .social-icon i {
 	color: #777;
 	transition: all 0.3s ease;
-	-webkit-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
 }
 
 .social-icon:hover {
