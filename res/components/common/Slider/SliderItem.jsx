@@ -10,7 +10,13 @@ export default class SliderItem extends Component {
     let width = 100 / count + '%';
     return (
       <li className="slider-item" style={{width: width}}>
-        <img src={item.src} alt={item.alt} />
+          <img src={item.src} alt={item.alt} />
+          <div className="img-wrap">
+              <img src={this.props.item.img} />
+          </div>
+
+
+
       </li>
     );
   }
