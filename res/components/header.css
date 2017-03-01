@@ -2,6 +2,9 @@
 .header .main-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
+.main-header > div.navbar {
+  margin: 0;
+}
 .header .main-header figure {
   display: inline-block;
   padding: 20px 0;

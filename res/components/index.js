@@ -104,13 +104,13 @@ var IndexPage = React.createClass({
 
         return (
             <div className="container-pull index-page">
-                <div style={{width:"100%",height:"350px",overflow:"hidden"}}>
+                <div className="top-interactive">
                     <Slider
                         items={pageData.topImgs}
                         speed={1.2}
                         delay={2.1}
                         pause={true}
-                        autoplay={true}
+                        autoplay={false}
                         dots={true}
                         arrows={true}
                     />
