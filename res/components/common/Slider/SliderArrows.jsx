@@ -13,14 +13,12 @@ export default class SliderArrows extends Component {
     return (
       <div className="slider-arrows-wrap">
         <span
-          className="slider-arrow slider-arrow-left"
+          className="slider-arrow slider-arrow-left glyphicon glyphicon-backward"
           onClick={this.handleArrowClick.bind(this, -1)}>
-          &lt;
         </span>
         <span
-          className="slider-arrow slider-arrow-right"
+          className="slider-arrow slider-arrow-right glyphicon glyphicon-forward"
           onClick={this.handleArrowClick.bind(this, 1)}>
-          &gt;
         </span>
       </div>
     );

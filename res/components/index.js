@@ -6,15 +6,15 @@ require("./index.css");
 const pageData = {
     topImgs: [
         {
-            src: "./static/img/demo1.jpg",
+            src: "./static/img/img_9.jpg",
             alt: 'images-1',
         },
         {
-            src: "./static/img/demo2.jpg",
+            src: "./static/img/img_10.jpg",
             alt: 'images-2',
         },
         {
-            src: "./static/img/demo3.jpg",
+            src: "./static/img/img_11.jpg",
             alt: 'images-3',
         }
     ],

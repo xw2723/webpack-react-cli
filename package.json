@@ -29,9 +29,10 @@
   },
   "scripts": {
     "start": "webpack",
-    "dev": "webpack-dev-server --progress --colors",
+    "dev": "webpack-dev-server --inline --hot",
     "debug": "webpack-dev-server --inline --colors",
-    "build": "webpack --progress --colors"
+    "build": "webpack",
+    "watch": "webpack --progress --colors --watch"
   },
   "keywords": [
     "webpack",

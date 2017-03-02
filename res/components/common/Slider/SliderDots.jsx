@@ -13,6 +13,7 @@ export default class SliderDots extends Component {
   render() {
     let dotNodes = [];
     let { count, nowLocal } = this.props;
+
     for(let i = 0; i < count; i++) {
       dotNodes[i] = (
         <span
@@ -22,6 +23,7 @@ export default class SliderDots extends Component {
         </span>
       );
     }
+    
     return (
       <div className="slider-dots-wrap">
         {dotNodes}

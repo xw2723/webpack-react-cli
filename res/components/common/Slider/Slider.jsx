@@ -16,7 +16,7 @@ export default class Slider extends Component {
 
   // 向前向后多少
   turn(n) {
-    console.log();
+    //console.log();
     var _n = this.state.nowLocal + n;
     if(_n < 0) {
       _n = _n + this.props.items.length;
@@ -55,7 +55,7 @@ export default class Slider extends Component {
     let arrowsNode = <SliderArrows turn={this.turn.bind(this)}/>;
 
     let dotsNode = <SliderDots turn={this.turn.bind(this)} count={count} nowLocal={this.state.nowLocal} />;
-
+    
     return (
       <div
         className="slider"
