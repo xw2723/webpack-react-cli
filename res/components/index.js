@@ -1,23 +1,9 @@
 import React from "react";
 import Slider from "./common/Slider/Slider.jsx";
 
-require("./index.css");
+require("./index.scss");
 
 const pageData = {
-    topImgs: [
-        {
-            src: "./static/img/img_9.jpg",
-            alt: 'images-1',
-        },
-        {
-            src: "./static/img/img_10.jpg",
-            alt: 'images-2',
-        },
-        {
-            src: "./static/img/img_11.jpg",
-            alt: 'images-3',
-        }
-    ],
     list: [
         {img: "./static/img/img_9.jpg"},
         {img: "./static/img/img_10.jpg"},
@@ -36,6 +22,10 @@ const pageData = {
     ]
 };
 
+/**
+ * 暂不用
+ * 顶部图片轮播
+ */
 var TopImageBox = React.createClass({
     render: function(){
         return (
@@ -44,6 +34,10 @@ var TopImageBox = React.createClass({
             </div>
         );
     }
+});
+
+var BGone = React.createClass({
+    render: function(){}
 });
 
 /**
@@ -103,10 +97,14 @@ var IndexPage = React.createClass({
         }
 
         return (
-            <div className="container-pull index-page">
+            <div className="container index-page">
+                <div className="top-basebg">
+                    <img src="./static/img/bg_base.jpg" />
+                </div>
+
                 <div className="top-interactive">
                     <Slider
-                        items={pageData.topImgs}
+                        items={pageData.list}
                         speed={1.2}
                         delay={2.1}
                         pause={true}
@@ -115,6 +113,7 @@ var IndexPage = React.createClass({
                         arrows={true}
                     />
                 </div>
+
                 <div className="image-flow-list">
                     {
                         list.map(function(itemList, index){

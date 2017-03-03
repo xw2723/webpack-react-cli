@@ -98,3 +98,26 @@
     color: #fff;
     font-size: 14px;
 }
+
+// $rootPath: "http://localhost:3333/";
+$rootPath: "../../static/img/";
+@mixin backgroundImage($path) {
+    background: url(#{$rootPath + $path});
+}
+
+.top-basebg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    z-index: -99;
+    // /*background: url("../../static/img/bg_base.jpg");*/
+    // @include backgroundImage("bg_base.jpg");
+    // background-size: 100%;
+}
+.top-basebg > img {
+    width: 100%;
+    height: auto;
+}

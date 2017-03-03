@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-// import path from "path";
 
-require("../static/css/main.css");
+require("../static/css/main.scss");
+require("../static/css/style.scss");
+
 // var $ = require("JQuery");
 var $ = require("jquery");
 // var $ = require("./static/js/jquery-vendor.js");
@@ -38,6 +39,7 @@ ReactDom.render(
 
 
 
+// import path from "path";
 // var fs = require("fs");
 // fs.exists("./static/js/jquery-vendor.js", function(exists) {  
 //     if(exists){

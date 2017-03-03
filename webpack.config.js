@@ -1,10 +1,7 @@
 var webpack = require('webpack');
 
-// var path = require('path');
-// var node_modules = path.resolve(__dirname, 'node_modules');
-// var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');
-
-// var ExtractTextPlugin = require("extract-text-webpack-plugin");  //css单独打包
+//css单独打包
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -32,11 +29,11 @@ module.exports = {
                 test: require.resolve('jquery'),
                 loader: 'expose-loader?jQuery!expose-loader?$'
             },
-            //autoprefixer-loader为css自动添加浏览器前缀
-            { test: /\.css$/, loader: 'style-loader!css-loader!autoprefixer-loader'},
-            { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'], },
-            { test: /\.json$/, loader: 'json', },
-            { test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
+            { test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader'] },
+            //处理style，css；合并;autoprefixer-loader为css自动补全浏览器前缀
+            { test: /\.css$/, loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader!autoprefixer-loader' })},
+            { test: /\.json$/, loader: 'json' },
+            { test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192'},
             {
                 test: /\.(js|jsx)$/,
                 exclude: /(node_modules|bower_components)/,
@@ -48,8 +45,7 @@ module.exports = {
             },
         ]
     },
-    // 3.使用webpack构建本地服务器
-    // npm install --save-dev webpack-dev-server
+    // 3.使用webpack构建本地服务器，基于webpack-dev-server插件
     devServer: {
         // contentBase: './public', //本地服务器所加载的页面所在的目录
         // historyApiFallback: true, //不跳转
@@ -61,7 +57,13 @@ module.exports = {
     devtool: 'eval-source-map',
     plugins: [
         //css单独打包
-        // new ExtractTextPlugin('main.css'),
+        new ExtractTextPlugin("app.css"),
+        //测试插件作用
         new webpack.BannerPlugin('This file is created by zhaoda')
     ]
 };
+
+
+// var path = require('path');
+// var node_modules = path.resolve(__dirname, 'node_modules');
+// var pathToReact = path.resolve(node_modules, 'react/dist/react.min.js');

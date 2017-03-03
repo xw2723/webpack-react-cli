@@ -10,22 +10,35 @@ var Header = React.createClass({
                     <div className="container">
                         <div className="navbar-header">
                             <a className="navbar-brand" href="#">
-                                {/*<img alt="Brand" src="#"/>*/}
-                                xxxxx
+                                ikuup
+                            </a>
+                        </div>
+                        <div className="navbar-header">
+                            <a className="navbar-brand" href="#">
+                                Model
+                            </a>
+                            <a className="navbar-brand" href="#">
+                                Car
+                            </a>
+                            <a className="navbar-brand" href="#">
+                                Game
+                            </a>
+                            <a className="navbar-brand" href="#">
+                                Store
                             </a>
                         </div>
 
                         <div className="nav-block right block-menu navbar-right">
                             <ul className="nav navbar-nav">
-                                <li><a href="#">Link</a></li>
-                                <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button">Dropdown</a>
+                                <li><a href="#">Login</a></li>
+                                {/*<li className="dropdown">
+                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button">Login</a>
                                     <ul className="dropdown-menu">
                                         <li><a href="#">Action</a></li>
                                         <li><a href="#">Another action</a></li>
                                         <li><a href="#">Something else here</a></li>
                                     </ul>
-                                </li>
+                                </li>*/}
                             </ul>
                         </div>
                     </div>
