@@ -28,7 +28,7 @@ class ThemeOne extends Component {
 
   render() {
     return (
-        <div className="container">
+        <div>
           <div className="row img-wrap-theme">
             <div className="col-xs-12 col-md-3 img-wrap">
                 <img src={this.props.imgsrc} />

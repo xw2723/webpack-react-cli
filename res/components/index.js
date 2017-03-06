@@ -5,20 +5,20 @@ require("./index.scss");
 
 const pageData = {
     list: [
-        {img: "./static/img/img_9.jpg"},
-        {img: "./static/img/img_10.jpg"},
-        {img: "./static/img/img_11.jpg"},
-        {img: "./static/img/img_12.jpg"},
-        {img: "./static/img/img_13.jpg"},
-        {img: "./static/img/img_14.jpg"},
-        {img: "./static/img/img_15.jpg"},
-        {img: "./static/img/img_9.jpg"},
-        {img: "./static/img/img_10.jpg"},
-        {img: "./static/img/img_11.jpg"},
-        {img: "./static/img/img_12.jpg"},
-        {img: "./static/img/img_13.jpg"},
-        {img: "./static/img/img_14.jpg"},
-        {img: "./static/img/img_15.jpg"}
+        {src: "./static/img/img_9.jpg"},
+        {src: "./static/img/img_10.jpg"},
+        {src: "./static/img/img_11.jpg"},
+        {src: "./static/img/img_12.jpg"},
+        // {src: "./static/img/img_13.jpg"},
+        // {src: "./static/img/img_14.jpg"},
+        // {src: "./static/img/img_15.jpg"},
+        // {src: "./static/img/img_9.jpg"},
+        // {src: "./static/img/img_10.jpg"},
+        // {src: "./static/img/img_11.jpg"},
+        // {src: "./static/img/img_12.jpg"},
+        // {src: "./static/img/img_13.jpg"},
+        // {src: "./static/img/img_14.jpg"},
+        // {src: "./static/img/img_15.jpg"}
     ]
 };
 
@@ -48,7 +48,7 @@ var ItemDom = React.createClass({
         return (
             <li>
                 <div className="img-wrap">
-                    <img src={this.props.item.img} />
+                    <img src={this.props.item.src} />
                 </div>
                 <div className="txt-wrap">
                     <div className="txt-wrap-table">

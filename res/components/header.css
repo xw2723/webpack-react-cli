@@ -1,6 +1,9 @@
-
 .header .main-header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.main-header .navbar-tmp1 {
+  background: transparent;
+  border: 0;
 }
 .main-header > div.navbar {
   margin: 0;
@@ -53,3 +56,43 @@
   /*background: url("../images/backgrounds/bg-top.jpg") top center no-repeat;*/
   background-size: cover;
 }
+
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>li>a:hover {
+  
+}
+
+.navbar-default .menu {
+  margin-left: 80px; 
+}
+.navbar-default .menu .navbar-brand {
+  color: #fff;
+  margin-right: 30px;
+  position: relative;
+}
+.navbar-default .menu .navbar-brand:hover {
+  color: rgba(211, 56, 123, 0.772549);
+}
+.navbar-default .menu .navbar-brand:after,
+.navbar-default .menu .navbar-brand:before {
+  content:'';
+  width: 0;
+  height: 2px;
+  display: block;
+  position: absolute;
+  background: linear-gradient(to right, rgba(211, 56, 123, 0.772549) 0%, rgba(134, 40, 205, 0.772549) 100%);
+  transition: all 0.5s;
+}
+.navbar-default .menu .navbar-brand:before {
+  top: 0;
+  right: 0;
+}
+.navbar-default .menu .navbar-brand:after {
+  bottom: 0;
+  left: 0;
+}
+.navbar-default .menu .navbar-brand:hover:before,
+.navbar-default .menu .navbar-brand:hover:after {
+  width: 100%;
+}
+

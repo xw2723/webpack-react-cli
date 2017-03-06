@@ -6,14 +6,14 @@ var Header = React.createClass({
     render: function(){
         return (
             <div className="main-header">
-                <div className="navbar navbar-default">
+                <div className="navbar navbar-default navbar-tmp1">
                     <div className="container">
                         <div className="navbar-header">
                             <a className="navbar-brand" href="#">
                                 ikuup
                             </a>
                         </div>
-                        <div className="navbar-header">
+                        <div className="navbar-header menu">
                             <a className="navbar-brand" href="#">
                                 Model
                             </a>

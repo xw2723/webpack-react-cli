@@ -49,15 +49,18 @@ module.exports = {
     devServer: {
         // contentBase: './public', //本地服务器所加载的页面所在的目录
         // historyApiFallback: true, //不跳转
-        colors: true, //终端中输出结果为彩色
+        // colors: true, //终端中输出结果为彩色
         inline: true, //实时刷新
-        port: 8080
+        hot: true,  //热模块替换
+        port: 8080  //指定端口号
     },
     //方便开发环境调试和错误追踪
     devtool: 'eval-source-map',
     plugins: [
         //css单独打包
         new ExtractTextPlugin("app.css"),
+        //热模块替换
+        new webpack.HotModuleReplacementPlugin(),
         //测试插件作用
         new webpack.BannerPlugin('This file is created by zhaoda')
     ]
