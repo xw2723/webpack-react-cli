@@ -1,56 +1,44 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import createHistory from 'history/lib/createHashHistory'
-import { Router, Route, Link } from 'react-router';
+import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
+
+import $ from 'jquery';
+// var $ = require("./static/js/jquery-vendor.js");
+
+import MainScss from '../static/css/main.scss';
 
 /**
  * 导入模块
  */
-import Header from './components/header';
+import Header from './components/header/header';
 import Footer from './components/footer';
 import IndexPage from './components/index';
-
-require("../static/css/main.scss");
-// require("../static/css/style.scss");
-
-// var $ = require("JQuery");
-var $ = require("jquery");
-// var $ = require("./static/js/jquery-vendor.js");
+import CarPage from './components/car/car';
+import GamePage from './components/game/game';
 
 
-var BodyDom = React.createClass({
-    render: function(){
-        return (
-            <IndexPage />
-        );
-    }
-});
 
-var CarDom = React.createClass({
-    render: function(){
-        return (
-            <div>
-                Car page!!!
-            </div>
-        );
-    }
+var App = React.createClass({
+  render() {
+    return (
+        <div>
+            {this.props.children}
+        </div>
+    );
+  }
 });
 
 ReactDom.render(
     (
         <div>
             <Header />
-            <Router history={createHistory()}>
-                <Route path="/" component={BodyDom}>
-                    {/*<Route path="about" component={About}/>
-                    <Route path="users" component={Users}>
-                        <Route path="/user/:userId" component={User}/>
-                    </Route>
-                    <Route path="*" component={NoMatch}/>*/}
+            <Router history={hashHistory}>
+                <Route path="/" component={App}>
+                    <IndexRoute component={IndexPage}/>
+                    <Route path="/car" component={CarPage}></Route>
+                    <Route path="/game" component={GamePage}></Route>
                 </Route>
-                <Route path="/car" component={CarDom}></Route>
             </Router>
-            <BodyDom />
             <Footer />
         </div>
     ),

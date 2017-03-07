@@ -14,23 +14,23 @@ var Header = React.createClass({
                             </a>
                         </div>
                         <div className="navbar-header menu">
-                            <a className="navbar-brand" href="#">
+                            <a className="navbar-brand" href="#/">
                                 Model
                             </a>
-                            <a className="navbar-brand" href="#">
+                            <a className="navbar-brand" href="#/car">
                                 Car
                             </a>
-                            <a className="navbar-brand" href="#">
+                            <a className="navbar-brand" href="#/game">
                                 Game
                             </a>
-                            <a className="navbar-brand" href="#">
+                            <a className="navbar-brand" href="#/store">
                                 Store
                             </a>
                         </div>
 
                         <div className="nav-block right block-menu navbar-right">
                             <ul className="nav navbar-nav">
-                                <li><a href="#">Login</a></li>
+                                <li><a href="javascript:void(0);">Login</a></li>
                                 {/*<li className="dropdown">
                                     <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button">Login</a>
                                     <ul className="dropdown-menu">

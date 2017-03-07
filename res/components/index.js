@@ -9,10 +9,10 @@ const pageData = {
         {src: "./static/img/img_10.jpg"},
         {src: "./static/img/img_11.jpg"},
         {src: "./static/img/img_12.jpg"},
-        // {src: "./static/img/img_13.jpg"},
-        // {src: "./static/img/img_14.jpg"},
-        // {src: "./static/img/img_15.jpg"},
-        // {src: "./static/img/img_9.jpg"},
+        {src: "./static/img/img_13.jpg"},
+        {src: "./static/img/img_14.jpg"},
+        {src: "./static/img/img_15.jpg"},
+        {src: "./static/img/img_9.jpg"},
         // {src: "./static/img/img_10.jpg"},
         // {src: "./static/img/img_11.jpg"},
         // {src: "./static/img/img_12.jpg"},
@@ -57,12 +57,30 @@ var ItemDom = React.createClass({
                             <div className="likebox">
                                 <i className="glyphicon glyphicon-heart-empty"></i>
                                 <i className="glyphicon glyphicon-heart"></i>
-                                {/*<span>88</span>*/}
+                                <span>88</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </li>
+        );
+    }
+});
+
+/**
+ * 每一列dom
+ */
+var ListDom = React.createClass({
+    render: function(){
+        alert(JSON.stringify(this.props.itemList));
+        return (
+            <ul className="image-flow-colm">
+                {
+                    this.props.itemList.map(function(item,index){
+                        return (<ItemDom key={index} item={item} />);
+                    })
+                }
+            </ul>
         );
     }
 });
@@ -116,18 +134,8 @@ var IndexPage = React.createClass({
 
                 <div className="image-flow-list">
                     {
-                        list.map(function(itemList, index){
-                            return (
-                                <ul className="image-flow-colm">
-                                    {
-                                        itemList.map(function(n, idx){
-                                            return (
-                                                <ItemDom item={n} />
-                                            );
-                                        })
-                                    }
-                                </ul>
-                            );
+                        list.map(function(item,index){
+                            return (<ListDom key={index} itemList={item} />);
                         })
                     }
                 </div>
