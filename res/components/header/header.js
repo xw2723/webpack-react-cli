@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, IndexLink } from 'react-router';
 
 require("./header.css");
 
@@ -14,35 +15,20 @@ var Header = React.createClass({
                             </a>
                         </div>
                         <div className="navbar-header menu">
-                            <a className="navbar-brand" href="#/">
-                                Model
-                            </a>
-                            <a className="navbar-brand" href="#/car">
-                                Car
-                            </a>
-                            <a className="navbar-brand" href="#/game">
-                                Game
-                            </a>
-                            <a className="navbar-brand" href="#/store">
-                                Store
-                            </a>
+                            <IndexLink to="/" className="navbar-brand" activeClassName="active">Model</IndexLink>
+                            <Link to="/car" className="navbar-brand" activeClassName="active">Car</Link>
+                            <Link to="/game" className="navbar-brand" activeClassName="active">Game</Link>
+                            <Link to="/store" className="navbar-brand" activeClassName="active">Store</Link>
                         </div>
 
                         <div className="nav-block right block-menu navbar-right">
                             <ul className="nav navbar-nav">
                                 <li><a href="javascript:void(0);">Login</a></li>
-                                {/*<li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button">Login</a>
-                                    <ul className="dropdown-menu">
-                                        <li><a href="#">Action</a></li>
-                                        <li><a href="#">Another action</a></li>
-                                        <li><a href="#">Something else here</a></li>
-                                    </ul>
-                                </li>*/}
                             </ul>
                         </div>
                     </div>
                 </div>
+                {this.props.children}
             </div>
         );
     }

@@ -70,8 +70,13 @@
   margin-right: 30px;
   position: relative;
 }
+.navbar-default .menu .navbar-brand.active,
 .navbar-default .menu .navbar-brand:hover {
   color: rgba(211, 56, 123, 0.772549);
+}
+.navbar-default .menu .navbar-brand.active:after,
+.navbar-default .menu .navbar-brand.active:before {
+  width: 100%;
 }
 .navbar-default .menu .navbar-brand:after,
 .navbar-default .menu .navbar-brand:before {

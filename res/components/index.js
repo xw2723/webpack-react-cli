@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "./common/Slider/Slider.jsx";
+// import Dialog from "./common/dialog/dialog";
 
 require("./index.scss");
 
@@ -29,21 +30,19 @@ const pageData = {
 var TopImageBox = React.createClass({
     render: function(){
         return (
-            <div>
-                
-            </div>
+            <div></div>
         );
     }
 });
 
-var BGone = React.createClass({
-    render: function(){}
-});
 
 /**
  * 图片流的每一项
  */
 var ItemDom = React.createClass({
+    handleClick: function(){
+        console.log("key: "+this.props.itemid);
+    },
     render: function(){
         return (
             <li>
@@ -53,7 +52,7 @@ var ItemDom = React.createClass({
                 <div className="txt-wrap">
                     <div className="txt-wrap-table">
                         <div>
-                            <p className="txt">我的开始，我的结束！！！！</p>
+                            <p onClick={this.handleClick} className="txt">我的开始，我的结束！！！！</p>
                             <div className="likebox">
                                 <i className="glyphicon glyphicon-heart-empty"></i>
                                 <i className="glyphicon glyphicon-heart"></i>
@@ -67,17 +66,16 @@ var ItemDom = React.createClass({
     }
 });
 
-/**
+/** 
  * 每一列dom
  */
 var ListDom = React.createClass({
     render: function(){
-        alert(JSON.stringify(this.props.itemList));
         return (
             <ul className="image-flow-colm">
                 {
                     this.props.itemList.map(function(item,index){
-                        return (<ItemDom key={index} item={item} />);
+                        return (<ItemDom key={index} item={item} itemid={index} />);
                     })
                 }
             </ul>
@@ -139,6 +137,8 @@ var IndexPage = React.createClass({
                         })
                     }
                 </div>
+
+                {/*<Dialog />*/}
             </div>
         );
     }

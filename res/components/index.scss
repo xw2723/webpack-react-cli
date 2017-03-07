@@ -69,17 +69,26 @@
     width: 100%;
     height: 100%;
     display: table;
+    overflow: hidden;
 }
 .image-flow-colm > li > .txt-wrap > .txt-wrap-table > div {
     display: table-cell;
     vertical-align: middle;
     text-align: center;
 }
-.image-flow-colm > li > .txt-wrap > .txt-wrap-table p.txt{
+.image-flow-colm > li > .txt-wrap > .txt-wrap-table p.txt {
     font-size: 16px;
     font-weight: bold;
     margin: 0;
+    color: transparent;
+    transform: scale(5);
+    margin-bottom: 100%;
+    transition: all 0.5s;
+}
+.image-flow-colm > li > .txt-wrap > .txt-wrap-table:hover p.txt {
+    margin-bottom: 0;
     color: #fff;
+    transform: scale(1);
 }
 
 .image-flow-colm > li > .txt-wrap > .txt-wrap-table .likebox {

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { Provider } from 'react-redux';
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 
 import $ from 'jquery';
@@ -16,12 +17,13 @@ import IndexPage from './components/index';
 import CarPage from './components/car/car';
 import GamePage from './components/game/game';
 
-
+const store = configureStore();
 
 var App = React.createClass({
   render() {
     return (
         <div>
+            <Header />
             {this.props.children}
         </div>
     );
@@ -31,15 +33,17 @@ var App = React.createClass({
 ReactDom.render(
     (
         <div>
-            <Header />
-            <Router history={hashHistory}>
-                <Route path="/" component={App}>
-                    <IndexRoute component={IndexPage}/>
-                    <Route path="/car" component={CarPage}></Route>
-                    <Route path="/game" component={GamePage}></Route>
-                </Route>
-            </Router>
-            <Footer />
+            <Provider store={store}>
+                <Router history={hashHistory}>
+                    <Route path="/" component={App}>
+                        <IndexRoute component={IndexPage}/>
+                        <Route path="/car" component={CarPage}></Route>
+                        <Route path="/game" component={GamePage}></Route>
+                    </Route>
+                </Router>
+                
+                <Footer />
+            </Provider>
         </div>
     ),
     document.getElementById('app')
