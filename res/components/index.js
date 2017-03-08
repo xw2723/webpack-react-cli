@@ -1,6 +1,8 @@
 import React from "react";
+import { combineReducers, Provider } from 'react-redux';
+
 import Slider from "./common/Slider/Slider.jsx";
-// import Dialog from "./common/dialog/dialog";
+import Dialog from "./common/dialog/dialog";
 
 require("./index.scss");
 
@@ -142,6 +144,10 @@ var IndexPage = React.createClass({
             </div>
         );
     }
+});
+
+const rootReducer = combineReducers({
+    Dialog: Dialog
 });
 
 export default IndexPage;

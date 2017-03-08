@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import { Provider } from 'react-redux';
+import { Provider } from 'redux';
 import { Router, Route, Link, hashHistory, IndexRoute } from 'react-router';
 
 import $ from 'jquery';
@@ -17,7 +17,7 @@ import IndexPage from './components/index';
 import CarPage from './components/car/car';
 import GamePage from './components/game/game';
 
-const store = configureStore();
+// const store = configureStore();
 
 var App = React.createClass({
   render() {
